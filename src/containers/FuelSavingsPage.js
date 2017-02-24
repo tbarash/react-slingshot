@@ -5,6 +5,11 @@ import * as actions from '../actions/fuelSavingsActions';
 import {getCounter} from '../selectors/sliderSelector';
 
 class FuelSavingsPage extends Component {
+  componentWillMount() {
+    const {loadReports} = this.props;
+    loadReports();
+  }
+
   render() {
     const {counter} = this.props;
     return (
