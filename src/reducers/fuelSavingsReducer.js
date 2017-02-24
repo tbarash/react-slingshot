@@ -4,6 +4,8 @@ import objectAssign from 'object-assign';
 
 const initialSliderState = {
   counter: 15,
+  counter1: 20,
+
 };
 
 export default function fuelSavingsReducer(state = initialSliderState, action) {

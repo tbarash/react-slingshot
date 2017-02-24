@@ -1,12 +1,12 @@
 import React, {PropTypes, Component} from 'react'
 import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+// import {bindActionCreators} from 'redux';
 import * as actions from '../actions/fuelSavingsActions';
-//import FuelSavingsForm from '../components/FuelSavingsForm';
+import {getCounter} from '../selectors/sliderSelector';
 
 class FuelSavingsPage extends Component {
   render() {
-    const {counter} = this.props.fuelSavings;
+    const {counter} = this.props;
     return (
       <div>
         <h1> hello {counter} </h1>
@@ -15,24 +15,31 @@ class FuelSavingsPage extends Component {
   }
 }
 
-FuelSavingsPage.propTypes = {
-  actions: PropTypes.object.isRequired,
-  fuelSavings: PropTypes.object.isRequired
-};
-
-function mapStateToProps(state) {
-  return {
-    fuelSavings: state.fuelSavings
-  };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(actions, dispatch)
-  };
-}
+// FuelSavingsPage.propTypes = {
+//   actions: PropTypes.object.isRequired,
+//   fuelSavings: PropTypes.object.isRequired
+// };
+//
+// function mapStateToProps(state) {
+//   return {
+//     fuelSavings: state.fuelSavings
+//   };
+// }
+//
+// function mapDispatchToProps(dispatch) {
+//   return {
+//     actions: bindActionCreators(actions, dispatch)
+//   };
+// }
+//
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(FuelSavingsPage);
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  state => ({
+    counter: getCounter(state)
+  }),
+  actions
 )(FuelSavingsPage);
