@@ -16,3 +16,9 @@ function loadReports_success(payload) {
     payload
   };
 }
+
+export function handleToggle() {
+    return {
+      type: 'SLIDER@TOGGLE_ORDER'
+    };
+}

@@ -30,7 +30,7 @@ class Report extends Component {
 }
 
 Report.propTypes = {
-  report: PropTypes.Obj
+  report: PropTypes.object
 };
 
 

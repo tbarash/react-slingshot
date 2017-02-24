@@ -5,7 +5,7 @@ import Slider from '../containers/Slider';
 const HomePage = () => {
   return (
     <div>
-      <h1>React Slingshot</h1>
+      <button> open sidebar </button>
       <Slider />
     </div>
   );
