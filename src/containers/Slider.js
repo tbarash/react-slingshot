@@ -1,7 +1,8 @@
-import React, {PropTypes, Component} from 'react'
+import React, {PropTypes, Component} from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../actions/sliderActions';
 import {getSliderState} from '../selectors/sliderSelector';
+
 
 class Slider extends Component {
 
@@ -13,7 +14,7 @@ class Slider extends Component {
   render() {
     const {reports} = this.props;
     return (
-      <div>
+      <div className="slider">
         {
           reports.map((report, index) =>
             <h1 key={index}> hello {report.name} </h1>
