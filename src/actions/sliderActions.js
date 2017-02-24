@@ -22,3 +22,15 @@ export function handleToggle() {
       type: 'SLIDER@TOGGLE_ORDER'
     };
 }
+
+export function handleClose() {
+    return {
+      type: 'SLIDER@CLOSE'
+    };
+}
+
+export function handleOpen() {
+    return {
+      type: 'SLIDER@OPEN'
+    };
+}

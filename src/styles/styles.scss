@@ -7,6 +7,10 @@
   height: 100%;
   width: 250px;
 
+  &.hidden {
+    right: -251px !important;
+  }
+
   .reports-container {
     overflow-y: auto;
     height: 100%;
@@ -66,4 +70,12 @@
 
  }
 
+
+.open-btn {
+  position: fixed;
+  top: 100;
+  left: 100px;
+  background-color: blue;
+  color: white;
+}
 

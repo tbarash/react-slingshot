@@ -1,7 +1,7 @@
 //import objectAssign from 'object-assign';
 
 const initialSliderState = {
-  open: 0,
+  isHidden: false,
   ascending: false,
   reports : []
 
@@ -23,6 +23,20 @@ export default function sliderReducer(state = initialSliderState, action) {
       return {
         ...state,
         ascending: !state.ascending,
+      };
+    }
+
+    case 'SLIDER@CLOSE': {
+      return {
+        ...state,
+        isHidden: true,
+      };
+    }
+
+    case 'SLIDER@OPEN': {
+      return {
+        ...state,
+        isHidden: false,
       };
     }
 

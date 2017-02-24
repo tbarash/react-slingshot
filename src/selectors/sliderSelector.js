@@ -1,6 +1,6 @@
 import {createSelector} from 'reselect';
 
-const getIsOpen = state => state.slider.open == 1;
+const getIsHidden = state => state.slider.isHidden === true;
 const getReports = state => state.slider.reports;
 const getIsAscending = state => state.slider.ascending === true;
 
@@ -19,6 +19,6 @@ const getReportsSorted = createSelector(
 );
 
 export const getSliderState = state => ({
-  isOpen: getIsOpen(state),
   reports : getReportsSorted(state),
+  isHidden: getIsHidden(state)
 });
