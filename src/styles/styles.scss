@@ -1,8 +1,47 @@
 
 .slider {
 
+  .report {
+    font-family: sans-serif;
+    border-top: 1px solid #c9c9c9;
+    height: 53px;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 14px;
+    text-transform: lowercase;
 
+    .left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding-left: 15px;
 
+      span {
+        text-overflow: ellipsis;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 130px;
+      }
+
+      span:nth-child(2) {
+        color: #848484;
+        font-size: 11px;
+      }
+    }
+
+    .time {
+      display: flex;
+      flex-direction: column;
+      width: 50px;
+      flex-shrink: 0;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 11px;
+    }
+  }
 
 
 

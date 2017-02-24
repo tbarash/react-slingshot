@@ -2,7 +2,7 @@ import React, {PropTypes, Component} from 'react';
 import {connect} from 'react-redux';
 import * as actions from '../actions/sliderActions';
 import {getSliderState} from '../selectors/sliderSelector';
-
+import Report from './Report'
 
 class Slider extends Component {
 
@@ -15,9 +15,10 @@ class Slider extends Component {
     const {reports} = this.props;
     return (
       <div className="slider">
+        <h1> Reports 75 </h1>
         {
           reports.map((report, index) =>
-            <h1 key={index}> hello {report.name} </h1>
+            <Report key={index} report={report}/>
           )
         }
       </div>
