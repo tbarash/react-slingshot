@@ -1,18 +1,19 @@
-import React, {PropTypes} from 'react';
+import React, {PropTypes, Component} from 'react'
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import * as actions from '../actions/fuelSavingsActions';
-import FuelSavingsForm from '../components/FuelSavingsForm';
+//import FuelSavingsForm from '../components/FuelSavingsForm';
 
-export const FuelSavingsPage = (props) => {
-  return (
-    <FuelSavingsForm
-      saveFuelSavings={props.actions.saveFuelSavings}
-      calculateFuelSavings={props.actions.calculateFuelSavings}
-      fuelSavings={props.fuelSavings}
-    />
-  );
-};
+class FuelSavingsPage extends Component {
+  render() {
+    const {counter} = this.props.fuelSavings;
+    return (
+      <div>
+        <h1> hello {counter} </h1>
+      </div>
+    );
+  }
+}
 
 FuelSavingsPage.propTypes = {
   actions: PropTypes.object.isRequired,
