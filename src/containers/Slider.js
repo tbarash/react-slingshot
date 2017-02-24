@@ -16,11 +16,13 @@ class Slider extends Component {
     return (
       <div className="slider">
         <h1> Reports 75 </h1>
-        {
-          reports.map((report, index) =>
-            <Report key={index} report={report}/>
-          )
-        }
+        <div className="reports-container">
+          {
+            reports.map((report, index) =>
+              <Report key={index} report={report}/>
+            )
+          }
+        </div>
       </div>
     );
   }

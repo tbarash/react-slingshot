@@ -1,11 +1,29 @@
 
 .slider {
+  position: fixed;
+  top: 0;
+  right: 0;
+  border-left: 1px solid black;
+  height: 100%;
+
+  .reports-container {
+    overflow-y: auto;
+    height: 100%;
+  }
+
+  h1 {
+    font-family: sans-serif;
+    font-size: 22px;
+    padding-left: 15px;
+    color: teal;
+  }
 
   .report {
     font-family: sans-serif;
     border-top: 1px solid #c9c9c9;
     height: 53px;
     width: 200px;
+    padding: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -16,7 +34,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      padding-left: 15px;
+      padding-left: 5px;
 
       span {
         text-overflow: ellipsis;
