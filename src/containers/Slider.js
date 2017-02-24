@@ -35,17 +35,23 @@ class Slider extends Component {
   }
 
   render() {
-    const {reports, isHidden} = this.props;
+    const {reports, isHidden, loadReports} = this.props;
     const sliderClass = classNames({
       'slider': true,
       'hidden': isHidden
     });
     return (
       <div className={sliderClass}>
-        <h1> Reports 75 </h1>
+
+        <h1> Reports {reports.length} </h1>
         <button className="open-btn"onClick={this.handleOpen}>open</button>
-        <button onClick={this.handleClose}>close</button>
-        <button onClick={this.handleToggleClick}>toggle order</button>
+
+        <div className="buttons">
+          <button onClick={loadReports}>refresh</button>
+          <button onClick={this.handleClose}>close</button>
+          <div className="toggle-btn" onClick={this.handleToggleClick}/>
+        </div>
+
         <div className="reports-container">
           {
             reports.map((report, index) =>

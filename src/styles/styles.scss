@@ -6,6 +6,46 @@
   border-left: 1px solid black;
   height: 100%;
   width: 250px;
+  transition: right 0.5s ease;
+
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 2px;
+  }
+
+  .toggle-btn{
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    &:hover:before {
+      border-bottom: 20px solid blue;
+    }
+    &:hover:after {
+      border-top: 20px solid blue;
+    }
+    &:before {
+      position: absolute;
+      bottom: 22px;
+      content: '';
+      width: 0;
+    	height: 0;
+    	border-left: 10px solid transparent;
+    	border-right: 10px solid transparent;
+    	border-bottom: 20px solid black;
+    }
+    &:after {
+      position: absolute;
+      bottom: 0;
+      content: '';
+      width: 0;
+    	height: 0;
+    	border-left: 10px solid transparent;
+    	border-right: 10px solid transparent;
+    	border-top: 20px solid black;
+    }
+  }
 
   &.hidden {
     right: -251px !important;
