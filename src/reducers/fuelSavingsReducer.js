@@ -9,23 +9,19 @@ const initialSliderState = {
 };
 
 export default function fuelSavingsReducer(state = initialSliderState, action) {
-  let newState;
+  const {type, payload} = action;
 
-  switch (action.type) {
-    case 'blabla':
-      return objectAssign({}, state, {dateModified: action.dateModified});
+  switch (type) {
+    case 'SLIDER@GET_REPORTS_SUCCESS': {
+      debugger
+      const reports = payload;
+      //const sortedStyles  = stylesOrder.map(styleName => styles.find(style => style.id === styleName))
 
-    case '123':
-      // newState = objectAssign({}, state);
-      // newState[action.fieldName] = action.value;
-      // newState.necessaryDataIsProvidedToCalculateSavings = calculator().necessaryDataIsProvidedToCalculateSavings(newState);
-      // newState.dateModified = action.dateModified;
-      //
-      // if (newState.necessaryDataIsProvidedToCalculateSavings) {
-      //   newState.savings = calculator().calculateSavings(newState);
-      // }
-
-      return newState;
+      return {
+        ...state,
+        reports: reports
+      };
+    }
 
     default:
       return state;
