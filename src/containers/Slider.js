@@ -12,6 +12,7 @@ class Slider extends Component {
     this.handleToggleClick = this.handleToggleClick.bind(this);
     this.handleClose = this.handleClose.bind(this);
     this.handleOpen = this.handleOpen.bind(this);
+    this.handleSearchChange = this.handleSearchChange.bind(this);
   }
 
   componentWillMount() {
@@ -34,6 +35,11 @@ class Slider extends Component {
     handleOpen();
   }
 
+  handleSearchChange(event) {
+    const {updateSearch} = this.props;
+    updateSearch(event.target.value);
+  }
+
   render() {
     const {reports, isHidden, loadReports} = this.props;
     const sliderClass = classNames({
@@ -52,6 +58,7 @@ class Slider extends Component {
           <div className="toggle-btn" onClick={this.handleToggleClick}/>
         </div>
 
+        <input className="search" placeholder="search reports" type="text"  onChange={this.handleSearchChange}/>
         <div className="reports-container">
           {
             reports.map((report, index) =>
@@ -68,6 +75,7 @@ Slider.propTypes = {
   reports: PropTypes.array,
   handleToggle: PropTypes.func,
   handleClose: PropTypes.func,
+  updateSearch: PropTypes.func,
   handleOpen: PropTypes.func,
   isHidden: PropTypes.bool,
   loadReports: PropTypes.func

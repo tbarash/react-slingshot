@@ -3,6 +3,7 @@
 const initialSliderState = {
   isHidden: false,
   ascending: false,
+  searchValue: '',
   reports : []
 
 };
@@ -16,6 +17,14 @@ export default function sliderReducer(state = initialSliderState, action) {
       return {
         ...state,
         reports: reports
+      };
+    }
+
+    case 'SLIDER@UPDATE_SEARCH': {
+      const searchValue = payload;
+      return {
+        ...state,
+        searchValue: searchValue
       };
     }
 

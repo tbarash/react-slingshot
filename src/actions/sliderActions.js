@@ -34,3 +34,10 @@ export function handleOpen() {
       type: 'SLIDER@OPEN'
     };
 }
+
+export function updateSearch(value) {
+  return {
+    type: 'SLIDER@UPDATE_SEARCH',
+    payload: {value}
+  };
+}
